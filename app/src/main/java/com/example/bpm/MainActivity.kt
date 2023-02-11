@@ -29,14 +29,7 @@ class MainActivity : AppCompatActivity() {
         val runningSpeedDial = findViewById<SeekBar>(R.id.runningSpeedDial)
 
         createPlaylist.setOnClickListener {
-            // TO DO:
-            // - Get miles per hour
-            // - Get the genre
-            // - Get tempo using miles per hour
-            // - Get reccommended songs based on genre and tempo
-            // - Create a playlist
-            // - Add recommended songs to playlist
-            // - Sends use to playlist in spotify app
+            connected()
         }
 
         runningSpeedDial.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -66,7 +59,6 @@ class MainActivity : AppCompatActivity() {
                 spotifyAppRemote = appRemote
                 Log.d("MainActivity", "Connected! Yay!")
                 // Now you can start interacting with App Remote
-                connected()
             }
 
             override fun onFailure(throwable: Throwable) {
@@ -77,17 +69,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun connected() {
-        spotifyAppRemote?.let {
-            // Play a playlist
-            val playlistURI = "spotify:playlist:37i9dQZF1DX2sUQwD7tbmL"
-            it.playerApi.play(playlistURI)
-            // Subscribe to PlayerState
-            it.playerApi.subscribeToPlayerState().setEventCallback {
-                val track: Track = it.track
-                Log.d("MainActivity", track.name + " by " + track.artist.name)
-            }
-        }
-
+        // TO DO:
+        // - Get miles per hour
+        // - Get the genre
+        // - Get tempo using miles per hour
+        // - Get reccommended songs based on genre and tempo
+        // - Create a playlist
+        // - Add recommended songs to playlist
+        // - Sends use to playlist in spotify app
     }
 
     override fun onStop() {
