@@ -4,10 +4,3 @@ plugins {
     id 'com.android.library' version '7.4.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 }
-//repositories {
-//    mavenCentral()
-//}
-dependencies {
-    implementation project('libs/spotify-app-remote-release-0.7.2.aar')
-    implementation 'com.spotify.android:auth:1.2.5'
-}
