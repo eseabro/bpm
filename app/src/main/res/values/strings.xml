@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BPM</string>
+    <string-array name="spinner_options">
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>Hip-hop</item>
+        <item>Country</item>
+    </string-array>
 </resources>
