@@ -58,7 +58,9 @@ class MainActivity : AppCompatActivity() {
             override fun onConnected(appRemote: SpotifyAppRemote) {
                 spotifyAppRemote = appRemote
                 Log.d("MainActivity", "Connected! Yay!")
-                getPlaylist()
+                getRequest(
+                    "https://api.spotify.com/v1/recommendations?seed_genres=$genre&max_tempo=$BPM"
+                )
             }
 
             override fun onFailure(throwable: Throwable) {
@@ -66,22 +68,20 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    private fun getPlaylist() {
 
-        fun getRequest(sUrl: String): String? {
-            var result: String? = null
-            try {
-                val url = URL(sUrl)
-                val request = Request.Builder().url(url).build()
-                val response = client.newCall(request).execute()
-                result = response.body?.string()
-            } catch (err: Error) {
-                print("Error when executing get request: " + err.localizedMessage)
-            }
-            return result
+    fun getRequest(sUrl: String): String? {
+        var result: String? = null
+        try {
+            val url = URL(sUrl)
+            val request = Request.Builder().url(url).build()
+            val response = client.newCall(request).execute()
+            result = response.body?.string()
+        } catch (err: Error) {
+            print("Error when executing get request: " + err.localizedMessage)
         }
-
+        return result
     }
+
     override fun onStop() {
         super.onStop()
         spotifyAppRemote?.let {
