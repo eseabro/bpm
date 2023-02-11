@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
     <Spinner
@@ -13,7 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="50dp"
-        android:entries="@android:array/emailAddressTypes"
+        android:entries="@array/spinner_options"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/createPlaylist"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,10 +22,12 @@
 
     <TextView
         android:id="@+id/runningSpeed"
-        android:layout_width="133dp"
-        android:layout_height="69dp"
+        android:layout_width="203dp"
+        android:layout_height="171dp"
         android:layout_marginTop="16dp"
-        android:textSize="48sp"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textSize="96sp"
         app:layout_constraintBottom_toTopOf="@+id/runningSpeedDial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +40,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="50dp"
+        android:max="50"
         app:layout_constraintBottom_toTopOf="@+id/genreSelect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

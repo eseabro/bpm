@@ -26,5 +26,20 @@ class MainActivity : AppCompatActivity() {
             // - Add recommended songs to playlist
             // - Sends use to playlist in spotify app
         }
+
+        runningSpeedDial.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                // TODO Auto-generated method stub
+                runningSpeed.text = (progress.toFloat()/5).toString()
+            }
+        })
     }
 }
