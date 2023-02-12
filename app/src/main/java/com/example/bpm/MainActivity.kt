@@ -7,16 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
-import android.widget.Spinner
 import android.widget.TextView
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
-import kotlin.math.*
-
-import com.spotify.protocol.client.Subscription;
-import com.spotify.protocol.types.PlayerState;
-import com.spotify.protocol.types.Track;
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -51,25 +45,11 @@ class MainActivity : AppCompatActivity() {
 
             val BPM = Math.round(mphToBpm(mph) / 10.0) * 10.0;
 
-            // take BPM and return "playlist" JSONobject key
             var playlistLink = playlists.get(BPM.toString());
 
             val i = Intent(Intent.ACTION_VIEW);
             i.data = Uri.parse(playlistLink.toString());
             startActivity(i);
-
-
-            // nothing below 140
-            // nothing above 190
-
-            // TO DO:
-            // - Get miles per hour
-            // - Get the genre
-            // - Get tempo using miles per hour
-            // - Get reccommended songs based on genre and tempo
-            // - Create a playlist
-            // - Add recommended songs to playlist
-            // - Sends use to playlist in spotify app
         }
 
         runningSpeedDial.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
