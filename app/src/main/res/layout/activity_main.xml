@@ -7,43 +7,34 @@
     android:textAlignment="center"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/genreSelect"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="50dp"
-        android:entries="@array/spinner_options"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/createPlaylist"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/runningSpeed"
         android:layout_width="203dp"
         android:layout_height="171dp"
         android:layout_marginTop="16dp"
-        android:text="0.0"
+        android:text="4.0"
         android:textAlignment="center"
         android:textSize="96sp"
         app:layout_constraintBottom_toTopOf="@+id/runningSpeedDial"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595" />
 
     <SeekBar
         android:id="@+id/runningSpeedDial"
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="50dp"
-        android:max="50"
-        app:layout_constraintBottom_toTopOf="@+id/genreSelect"
+        android:layout_marginBottom="331dp"
+        android:max="20"
+        app:layout_constraintBottom_toTopOf="@+id/createPlaylist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runningSpeed" />
 
     <Button
         android:id="@+id/createPlaylist"
