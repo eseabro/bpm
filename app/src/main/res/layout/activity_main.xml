@@ -9,18 +9,17 @@
 
     <TextView
         android:id="@+id/runningSpeed"
-        android:layout_width="203dp"
-        android:layout_height="171dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="286dp"
+        android:layout_height="180dp"
         android:text="4.0"
         android:textAlignment="center"
-        android:textSize="96sp"
-        app:layout_constraintBottom_toTopOf="@+id/runningSpeedDial"
+        android:textSize="125sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintVertical_bias="0.446" />
 
     <SeekBar
         android:id="@+id/runningSpeedDial"
@@ -29,12 +28,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="331dp"
         android:max="20"
-        app:layout_constraintBottom_toTopOf="@+id/createPlaylist"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/runningSpeed" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
 
     <Button
         android:id="@+id/createPlaylist"
@@ -42,10 +42,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="96dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="76dp"
         android:text="Create playlist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RunBPM"
+        android:textColor="#C957BC"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="112dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
